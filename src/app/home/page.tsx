@@ -49,7 +49,7 @@ export default  function MyEditorPage() {
     // State variable for API payload
     const [editorContent, setEditorContent] = React.useState<Value>(initialValue);
     const{user} =useUser();
-    console.log("user", user);
+    
 
     const editor = usePlateEditor({
         plugins: [
@@ -62,8 +62,8 @@ export default  function MyEditorPage() {
             BlockquotePlugin.withComponent(BlockquoteElement),
         ],
         value: () => {
-            const savedValue = localStorage.getItem('installation-next-demo');
-            const value = savedValue ? JSON.parse(savedValue) : initialValue;
+            
+            const value = initialValue;
             setEditorContent(value); // Initialize state with the loaded value
             return value;
         },
@@ -72,7 +72,7 @@ export default  function MyEditorPage() {
     // Function to send content to API
     const sendToAPI = async () => {
         try {
-            console.log("obj",editorContent)
+            
 
 
             if(user?.id){
@@ -80,7 +80,7 @@ export default  function MyEditorPage() {
                     content: editorContent,
                     userId: user.id,
                 }
-                console.log("payload",payload);
+                
 
                 const url ="http://localhost:8080/user/"+ user.id+"/save";
                 const response = await fetch(url, {
@@ -97,7 +97,7 @@ export default  function MyEditorPage() {
 
                 if (response.ok) {
                     toast.success("Saved")
-                    console.log('Content sent successfully!');
+                    
                 } else {
                     console.error('Failed to send content');
                 }
