@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import type { Value } from 'platejs';
+import type {Value} from 'platejs';
 
 import {
     BlockquotePlugin,
@@ -12,18 +12,15 @@ import {
     ItalicPlugin,
     UnderlinePlugin,
 } from '@platejs/basic-nodes/react';
-import {
-    Plate,
-    usePlateEditor,
-} from 'platejs/react';
+import {Plate, usePlateEditor,} from 'platejs/react';
 import toast from 'react-hot-toast';
 
-import { BlockquoteElement } from '@/components/ui/blockquote-node';
-import { Editor, EditorContainer } from '@/components/ui/editor';
-import { FixedToolbar } from '@/components/ui/fixed-toolbar';
-import { H1Element, H2Element, H3Element } from '@/components/ui/heading-node';
-import { MarkToolbarButton } from '@/components/ui/mark-toolbar-button';
-import { ToolbarButton } from '@/components/ui/toolbar';
+import {BlockquoteElement} from '@/components/ui/blockquote-node';
+import {Editor, EditorContainer} from '@/components/ui/editor';
+import {FixedToolbar} from '@/components/ui/fixed-toolbar';
+import {H1Element, H2Element, H3Element} from '@/components/ui/heading-node';
+import {MarkToolbarButton} from '@/components/ui/mark-toolbar-button';
+import {ToolbarButton} from '@/components/ui/toolbar';
 import {useUser} from "@clerk/nextjs";
 
 const initialValue: Value = [
